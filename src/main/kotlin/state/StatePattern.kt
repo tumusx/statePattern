@@ -9,7 +9,6 @@ interface StateInterface {
 class DocumentRead : StateInterface {
     override fun isReadDocument(stateDocument: ObsDocument) {
         println("reading document")
-
     }
 
 }
@@ -26,9 +25,7 @@ class DocumentSend : StateInterface {
     override fun isReadDocument(stateDocument: ObsDocument) {
         println("send Document")
     }
-
 }
-
 
 class ObsDocument {
     private var stateDocument: StateInterface? = null
@@ -44,15 +41,10 @@ class ObsDocument {
     fun isRead() = stateDocument?.isReadDocument(this)
 }
 
-fun main(args: Array<String>) {
+ fun main() {
     val stateOBJ = ObsDocument()
 
     stateOBJ.isRead()
-    stateOBJ.isRead()
-    stateOBJ.isRead()
     stateOBJ.setStateOBJ(DocumentEdit())
-    stateOBJ.isRead()
-    stateOBJ.isRead()
-    stateOBJ.setStateOBJ(DocumentSend())
-    stateOBJ.isRead()
+
 }
